@@ -47,7 +47,7 @@ header{
 }
 .nav-bar a sup{
     color: #ff3f6c;
-    font-size: 7px;
+    font-size: 9px;
 }
 .studio{
 padding-bottom: 0px !important;
@@ -96,58 +96,61 @@ padding-bottom: 0px !important;
 .banner_image{
     width: 100%;
 }
-.category-name{
-    text-transform: uppercase;
-    color: #3e4152;
-    letter-spacing: .15em;
-    font-size: 1.8em;
-    margin: 50px 0px 10px 41px;
-    max-height: 5em;
-    font-weight: 700;
+.item-containers{
+    width: 80%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: 4;
 }
-.category-name2{
-    text-transform: uppercase;
-    color: #3e4152;
-    letter-spacing: .15em;
-    font-size: 1.8em;
-    margin: 50px 0px 10px 47px;
-    max-height: 5em;
-    font-weight: 700;
+.item-container{
+    width: 200px;
 }
-.category-items{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.image{
+    width: 100%;
 }
-.sale_item{
-    width: 250px;
+.rating{
+    font-weight: bolder;
+    font-size: 12px;    
 }
-.bag{
-    margin-left: 90px;
-    margin-bottom: 15px;
-    padding: 3px 15px 3px 15px;
-    border-radius: 6px;
-    background-color: #ff3e6c;
-    color: #fff;
-    font-weight: 700px;
-    font-family: "Sriracha", cursive;
-    font-size: 20px;
-    border: none;
+.company-name{
+   color:  #282c3f;
+   font-size: 17px;
+   font-weight: bolder;
+   margin-top: 10px;
+}
+.item-name{
+    color: #535766;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.price{
+    margin-top: 8px;
+}
+.current-price{
+    font-weight: 600;
+    margin-right: 4px;
     
 }
-.sec-btn{
-    margin-left:140px  ;
+.original-price{
+    font-size: 12px;
+    color: #7e818c;
 }
-.sec-btn2{
-    margin-left:140px  ;
+.discount{
+    margin-left: 4px;
+    font-size: 12px;
+    color: #ff905a;
 }
-.sec-btn3{
-    margin-left:140px  ;
+.btn{
+    margin-top: 6px;
+    padding: 4px 0px;
+    width: 100%;
+    background-color: #ff3e6c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
 }
-.sec-btn4{
-    margin-left:140px  ;
-}
-.bag:hover{
+.btn:hover{
     cursor: pointer;
 }
 
