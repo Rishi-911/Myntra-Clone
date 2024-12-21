@@ -116,24 +116,58 @@ const items = [
     }
 ];
 
-let innerHTML ='';
+
+
+function displayHomePage(){
+    if(!itemsContainer){
+        return;
+    }
+    let innerHTML ='';
 items.forEach(item =>{
    innerHTML += `<div class="item-container">
             <img class="image" src=" ${item.image}"alt="">
             <div class="rating">
-               (${item.rating.stars})⭐ | (${item.rating.count})
+               ${item.rating.stars}⭐ | ${item.rating.count}
             </div>
             <div class="company-name">
                 ${item.company}
             </div>
             <div class="item-name">${item.item_name}</div>
             <div class="price">
-                <span class="current-price">${item.current_price}</span>
+                <span class="current-price">Rs ${item.current_price}</span>
                 <span class="original-price"><del>Rs ${item.original_price}</del></span>
                 <span class="discount">(${item.discount_percentage}% off)</span>
             </div>
-            <button class="btn">Add To Bag</button>
+            <button class="btn" onClick = "added(${item.id})">Add To Bag</button>
         </div>`
 })
 itemsContainer.innerHTML = innerHTML;
+}
+let BagItems = [];
+onLoad();
+
+function onLoad(){
+    displayHomePage();
+    let  BagItemsStr = localStorage.getItem('BagItems')
+    BagItems = BagItemsStr ? JSON.parse(BagItemsStr) : [];
+    displayBagIcon();
+}
+
+function added (itemId){
+    BagItems.push(itemId);
+    localStorage.setItem('BagItems', JSON.stringify(BagItems));
+    displayBagIcon();
+}
+function displayBagIcon(){
+    let bag_count = document.querySelector('.bg-count')
+    if(BagItems.length > 0){
+        bag_count.style.visibility = 'visible';
+    bag_count.innerText = BagItems.length;
+    }
+    else{
+        bag_count.style.visibility = 'hidden';
+    }
+}
+    
+
 
